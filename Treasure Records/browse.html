@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Treasure Records</title>
+        <style>
+            
+            #myInput 
+            {
+                background-image:url('/css/searchicon.png');
+                background-position: 10px 10px;
+                background-repeat: no-repeat;
+                width: 100%;
+                font-size: 16px;
+                padding: 12px 20px 12px 40px;
+                border: 1px solid #ddd;
+                margin-bottom: 12px;
+            }
+            
+            div.img 
+            {
+                margin: 5px;
+                border: 1px solid #ccc;
+                float: left;
+                width: 150px;
+            }	
+
+
+            div.img img 
+            {
+                width: 150px;
+                height: 150px;
+            }
+
+            div.desc 
+            {
+                text-align: center;
+	            background-color:blue;
+	            width: 150px;
+                height: 125px;
+            }
+            
+            img{width: 50px; height: 50px;}
+            
+            ul
+            {
+                list-style-type: none;
+                margin: 0;
+                padding: 0;
+                overflow: hidden;
+
+            }
+            
+            li 
+            {
+                float: left;
+            }
+
+            li a, .dropbtn 
+            {
+                display: inline-block;
+                color: white;
+                text-align: center;
+                padding: 14px 16px;
+                text-decoration: none;
+            }
+
+            li a:hover, .dropdown:hover .dropbtn 
+            {
+                background-color: red;
+            }
+
+            li.dropdown 
+            {
+                display: inline-block;
+            }      
+
+            .dropdown-content 
+            {
+                display: none;
+                position: absolute;
+                background-color: white;
+                display: block
+                min-width: 160px;
+                box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            }
+
+            .dropdown-content a 
+            {
+                color: black;
+                padding: 12px 16px;
+                text-decoration: none;
+                text-align:center;
+                font-size: 10px;
+            }
+
+            .dropdown-content a:hover {background-color: grey}
+
+            .dropdown:hover .dropdown-content 
+            {
+                display: block;
+            }
+    
+</style>
+<link rel="stylesheet" href="main.css">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+</head>
+<body>
+        <!--CREATES NAV-BAR-->
+        <nav class="navbar navbar-default">
+
+                <!-- Nav bar w/ mobile-->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="home.html">Treasure Records</a>
+                </div>
+                <!-- Nav bar links -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <li class="dropdown">
+                            <a href="browse.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Browse <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="browse.html">New Releases</a></li>
+                                <li role="separator" class="divider"></li>
+                                <li><a href="browse.html">By Artist</a></li>
+                                <li role="separator" class="divider"></li>
+                                <li><a href="browse.html">By Genre</a></li>
+                                <li role="separator" class="divider"></li>
+                                <li><a href="browse.html">Shop All</a></li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            <form class="navbar-form navbar-nav">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="Search">
+                                    <button type="submit" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-search" aria-hidden-="true"></span>
+                                    </button>
+                                </div>
+                            </form>
+                        </li>
+                        <li><a href="forums.html">Forums</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right" >
+                        <li><a href="#" data-toggle="modal" data-target=".bs-example-modal-lg">Sign in</a></li>
+                        <li><a href="cart.html">Cart <span class="badge">0</span></a></li>
+                    </ul>
+                    
+
+                    
+                    <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+                        <div class="modal-dialog modal-lg" role="document">
+                            <div id="navSign"class="modal-content">
+                                <div id="modalSign"class="container">
+                                    <form class="form-signin">
+                                       
+                                        <h4>Returning Users <small>Please sign in.</small></h4>
+                                        <input type="text" id="inputUser" class="form-control" placeholder="Username" required autofocus>
+                                        <input type="password" id="inputPass" class="form-control" placeholder="Password" required>
+                                        <div class="checkbox">
+                                            <label>
+                                                <input type="checkbox" value="remember-me"> Remember me
+                                            </label>
+                                        </div>
+                                        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button><br>
+
+                                        <h4>New Users <small><a href="signup.html">Click here to sign up today!</a></small></h4>
+                              
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            
+        </nav>
+	<body bgcolor = "blue">
+	 <b> <center> <font size="30" color= "Orange">  Treasure Records</font> </center> </b>
+    
+    <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for Records..." title="Type in a record">
+
+<table id="myRecords">      
+        
+<div class="img"><a href="product.html">
+            <img src="Images/ProductPageImg/AmericanIdiot.jpg" width="200" height="100">
+            <div class="desc">Green Day American Idiot<br>$59.99<br></a>
+            <input type ="Submit" value = "add to cart" /></div>
+        
+</div>
+
+<div class="img"><a href="product.html">
+    <img src="Images/ProductPageImg/BeastieBoys.jpg" width="300" height="200">
+  <div class="desc">Beastie Boys Paul's Boutique<br>$89.99 
+  <br></a> <input type ="Submit" value = "add to cart" /></div>
+  
+</div>
+ 
+<div class="img"><a href="product.html">
+    <img src="Images/ProductPageImg/HeartAttack.jpg" width="300" height="200">
+  
+  <div class="desc">Man Overboard Heart Attack<br> $49.99 
+  <br></a>  <input type ="Submit" value = "add to cart" /></div>
+  
+</div>
+
+<div class="img"><a href="product.html">
+    <img src="Images/ProductPageImg/Homesick.jpg" width="300" height="200">
+  
+  <div class="desc">A Day To Remember Homesick<br> $49.99 
+  <br> </a> <input type ="Submit" value = "add to cart" /></div>
+  
+</div>
+
+<div class="img"><a href="product.html">
+    <img src="Images/ProductPageImg/AdagioForStrings.jpg" width="300" height="200">
+  
+  <div class="desc">Tiesto Adagio For Strings<br> $99.99 
+  <br></a>  <input type ="Submit" value = "add to cart" /></div>
+  
+</div>
+
+<div class="img"><a href="product.html">
+    <img src="Images/ProductPageImg/HybridTheory.jpg" width="300" height="200">
+  
+  <div class="desc">Linkin Park Hybrid Theory<br> $49.99 
+  <br></a>  <input type ="Submit" value = "add to cart" /></div>
+  
+</div>
+
+<div class="img"><a href="product.html">
+    <img src="Images/ProductPageImg/InfinitiyOnHigh.jpg" width="300" height="200">
+  
+  <div class="desc">Fall Out Boy Infinity on High<br> $49.99 
+  <br></a>  <input type ="Submit" value = "add to cart" /></div>
+  
+</div>
+
+<div class="img"><a href="product.html">
+    <img src="Images/ProductPageImg/Retrograde.jpg" width="300" height="200">
+  
+  <div class="desc">Crown the Empire Retrograde<br> $49.99 
+  <br></a>  <input type ="Submit" value = "add to cart" /></div>
+  
+</div>
+
+<div class="img"><a href="product.html">
+    <img src="Images/ProductPageImg/LiveAndLetDie.jpg" width="300" height="200">
+  
+  <div class="desc">Guns And Roses Live and Let Die<br> $49.99 
+  <br></a>  <input type ="Submit" value = "add to cart" /></div>
+  
+</div>
+
+<div class="img"><a href="product.html">
+    <img src="Images/ProductPageImg/MandatoryFun.jpg" width="300" height="200">
+  
+  <div class="desc">Weird Al<br> Mandatory Fun<br> $49.99 
+  <br></a>  <input type ="Submit" value = "add to cart" /></div>
+  
+</div>
+
+<div class="img"><a href="product.html">
+    <img src="Images/ProductPageImg/Purpose.jpg" width="300" height="200">
+  
+  <div class="desc">Justin Bieber<br>Purpose<br> $49.99 
+  <br></a>  <input type ="Submit" value = "add to cart" /></div>
+  
+</div>
+
+<div class="img"><a href="product.html">
+    <img src="Images/ProductPageImg/MichaelJackson.jpg" width="300" height="200">
+  
+  <div class="desc">Michael Jackson Thriller<br> $49.99
+  <br></a>  <input type ="Submit" value = "add to cart" /></div>
+</div>
+        
+<div class="img">
+    <img src="Images/ProductPageImg/BeautyBehindTheMaddness.jpg" width="300" height="200">
+  </a> 
+  <div class="desc">The Weeknd Beauty Behind the Maddness<br> $49.99
+  <br> <input type ="Submit" value = "add to cart" /></div>
+</div>
+
+<div class="img">
+    <img src="Images/ProductPageImg/TheMagicOfAbba.jpg" width="300" height="200">
+  </a> 
+  <div class="desc">ABBA The Magic of ABBA<br> $49.99
+  <br> <input type ="Submit" value = "add to cart" /></div>
+</div>
+        
+<div class="img">
+    <img src="Images/ProductPageImg/SoundOfChange.jpg" width="300" height="200">
+  </a> 
+  <div class="desc">Dirty Heads Soung of Change<br> $49.99
+  <br> <input type ="Submit" value = "add to cart" /></div>
+</div>
+        
+<div class="img">
+    <img src="Images/ProductPageImg/TheStranger.jpg" width="300" height="200">
+  </a> 
+  <div class="desc">Billey Joel The Stranger<br> $49.99
+  <br> <input type ="Submit" value = "add to cart" /></div>
+</div>
+        
+<div class="img">
+    <img src="Images/ProductPageImg/MarshallMathers.jpg" width="300" height="200">
+  </a> 
+  <div class="desc">Eminem Marhshall Mathers<br> $49.99
+  <br> <input type ="Submit" value = "add to cart" /></div>
+</div>
+        
+<div class="img">
+    <img src="Images/ProductPageImg/ToWeirdToLiveToRareToDie.jpg" width="300" height="200">
+  </a> 
+  <div class="desc">Panic at the Disco Too Weird To Live Too Rare To Die<br> $49.99
+  <br> <input type ="Submit" value = "add to cart" /></div>
+</div>
+        
+<div class="img">
+    <img src="Images/ProductPageImg/SpreadingRumours.jpg" width="300" height="200">
+  </a> 
+  <div class="desc">Group Love Spreading Rumors<br> $49.99
+  <br> <input type ="Submit" value = "add to cart" /></div>
+</div>
+        
+<div class="img">
+    <img src="Images/ProductPageImg/Riot.jpg" width="300" height="200">
+  </a> 
+  <div class="desc">Paramore Riot<br> $49.99
+  <br> <input type ="Submit" value = "add to cart" /></div>
+</div>
+        
+<div class="img">
+    <img src="Images/ProductPageImg/Bouquet.jpg" width="300" height="200">
+  </a> 
+  <div class="desc">The Chainsmokers Bouquet<br> $49.99
+  <br> <input type ="Submit" value = "add to cart" /></div>
+</div>
+        
+<div class="img">
+    <img src="Images/ProductPageImg/ThreeCheersForSweetRevenge.jpg" width="300" height="200">
+  </a> 
+  <div class="desc">My Chemical Romance Three Cheers for Sweet Revenge<br> $49.99
+  <br> <input type ="Submit" value = "add to cart" /></div>
+</div>
+        
+<div class="img">
+    <img src="Images/ProductPageImg/Discovery.jpg" width="300" height="200">
+  </a> 
+  <div class="desc">Daft Punk Discovery<br> $49.99
+  <br> <input type ="Submit" value = "add to cart" /></div>
+</div>
+        
+<div class="img">
+    <img src="Images/ProductPageImg/What'sGoingOn.jpg" width="300" height="200">
+  </a> 
+  <div class="desc">Marvin Gaye What's Going On<br> $49.99
+  <br> <input type ="Submit" value = "add to cart" /></div>
+</div>
+        
+<script>
+    function myFunction()
+    {
+        var input, filter, table, tr, td, i;
+        input = document.getElementById("myInput");
+        filter = input.value.toUpperCase();
+        tr = table.getElementsByTagName("desc");
+        for (i = 0; i < tr.length; i++) {
+        td = tr[i].getElementsByTagName("img")[0];
+        if (td) 
+        {
+            if (td.innerHTML.toUpperCase().indexOf(filter) > -1) 
+            {
+                tr[i].style.display = "";
+            } 
+            else 
+            {
+                tr[i].style.display = "none";
+            }
+        }       
+    }
+</script>
+        
+
+        
+</body>
+</html>

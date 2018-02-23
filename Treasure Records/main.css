@@ -1,0 +1,115 @@
+﻿body
+{
+
+}
+
+.container-fluid{
+    max-width: 900px;
+    
+}
+
+#mainContainer{
+    
+}
+
+
+.navbar {
+    margin-bottom: 0px;
+
+}
+
+#navSign{
+    max-width: 500px;
+}
+
+#modalSign{
+    max-width: 500px;
+}
+
+#signupBtn{
+    margin-bottom: 20px;
+}
+
+
+
+.carousel{
+    margin-bottom: 50px;
+    max-width: 900px;
+   
+}
+
+#topTables{
+    max-width:900px;
+    margin: auto;
+    text-align: center;
+    margin-bottom: 25px;
+
+}
+
+#tableHead{
+    text-align: center;
+}
+
+#tableLabel{
+    max-width: 25px;
+}
+
+/*------------------------------------------------------*/
+/*------------------PRODUCT PAGE------------------------*/
+/*------------------------------------------------------*/
+
+#topProduct{
+    margin-bottom: 50px;
+}
+#prodTab{
+    margin-top: 25px;
+
+}
+.tab-content{
+    border: 1px solid #ddd;
+    border-radius: 10px;
+
+}
+
+.tab-content > .tab-pane{
+    display: block;
+    visibility:hidden;
+    height: 200px;
+    overflow-y:scroll;
+}
+
+.tab-content>.active{
+    visibility:visible;
+}
+
+.col-md-6{
+    max-width: 430px;
+}
+
+#album-Title{
+    font-size: 30px;
+}
+
+#artist-Prod{
+    color: black;
+}
+
+/*------------------------------------------------------*/
+/*------------------------FOOTER------------------------*/
+/*------------------------------------------------------*/
+.foot{
+	background-color: #222;
+	bottom: 0px;
+
+	width: 1600px;
+	color: #fff;
+	text-align: center;
+}
+
+
+.social-img{
+	width: 20px;
+	height: 20px;
+	margin-right: 6px;
+	margin-bottom: 5px;
+}

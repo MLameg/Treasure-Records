@@ -1,0 +1,120 @@
+<!DOCTYPE>
+<html>
+	<style>
+		body{
+			background-color: blue;
+		}
+	</style>
+
+	<head>
+		<title>Looking to Sell/Trade?</title>
+		<link rel="stylesheet" href="main.css">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+	</head>
+
+	<script>
+		function myPostFunction() {
+		    var table = document.getElementById("myTable");
+		}
+	</script>
+
+	<body>
+		        <!--CREATES NAV-BAR-->
+        <nav class="navbar navbar-default">
+
+                <!-- Nav bar w/ mobile-->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="home.html">Treasure Records</a>
+                </div>
+                <!-- Nav bar links -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <li class="dropdown">
+                            <a href="browse.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Browse <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="browse.html">New Releases</a></li>
+                                <li role="separator" class="divider"></li>
+                                <li><a href="browse.html">By Artist</a></li>
+                                <li role="separator" class="divider"></li>
+                                <li><a href="browse.html">By Genre</a></li>
+                                <li role="separator" class="divider"></li>
+                                <li><a href="browse.html">Shop All</a></li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            <form class="navbar-form navbar-nav">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="Search">
+                                    <button type="submit" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-search" aria-hidden-="true"></span>
+                                    </button>
+                                </div>
+                            </form>
+                        </li>
+                        <li><a href="forums.html">Forums</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right" >
+                        <li><a href="#" data-toggle="modal" data-target=".bs-example-modal-lg">Sign in</a></li>
+                        <li><a href="cart.html">Cart <span class="badge">0</span></a></li>
+                    </ul>
+                    
+
+                    
+                    <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+                        <div class="modal-dialog modal-lg" role="document">
+                            <div id="navSign"class="modal-content">
+                                <div id="modalSign"class="container">
+                                    <form class="form-signin">
+                                       
+                                        <h4>Returning Users <small>Please sign in.</small></h4>
+                                        <input type="text" id="inputUser" class="form-control" placeholder="Username" required autofocus>
+                                        <input type="password" id="inputPass" class="form-control" placeholder="Password" required>
+                                        <div class="checkbox">
+                                            <label>
+                                                <input type="checkbox" value="remember-me"> Remember me
+                                            </label>
+                                        </div>
+                                        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button><br>
+
+                                        <h4>New Users <small><a href="signup.html">Click here to sign up today!</a></small></h4>
+                              
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            
+        </nav>
+		<table id = "myTable" width="1000" border="3" bgcolor="lightblue">
+
+		
+
+			<tr>
+				<th colspan="2">Looking to Sell/Trade?</th>
+			</tr>
+
+			<tr>
+				<td>"customer username and profile pic"</td>
+				<td>I have the Beetles' Rubber Soul album from 1965. It's in decent condition and still plays great! I'll trade for another album made around the 1960's.</td>
+			</tr>
+		</table>
+
+		<label>
+			<p><textarea name="comments" rows="4" cols="87"></textarea></p>
+			<p><button onclick= "myPostFunction()">Post</button></p>
+		</label>
+	</body>
+</html>
